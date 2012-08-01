@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - 1.9.3
+bundler_args: '--without development extras'
+before_script:
+  - RAILS_ENV=test bundle exec rake --trace db:create db:migrate
+notifications:
+  email:
+    recipients:
+      - james@logi.cl
